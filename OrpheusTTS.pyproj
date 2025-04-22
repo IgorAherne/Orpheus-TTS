@@ -4,13 +4,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d425675d-073c-4346-94f1-3c98ce17c9a6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>OrpheusTTS.py</StartupFile>
+    <StartupFile>orpheus_inference_cpp.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>OrpheusTTS</Name>
     <RootNamespace>OrpheusTTS</RootNamespace>
+    <InterpreterId>MSBuild|venv|C:\_myDrive\repos\auto-vlog\AutoVlogProj\AutoVlogProj.pyproj</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +23,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="OrpheusTTS.py" />
+    <Compile Include="orpheus_inference_cpp.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="MSBuild|venv|C:\_myDrive\repos\auto-vlog\AutoVlogProj\AutoVlogProj.pyproj" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
