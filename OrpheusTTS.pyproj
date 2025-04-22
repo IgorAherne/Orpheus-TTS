@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d425675d-073c-4346-94f1-3c98ce17c9a6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>orpheus_inference_cpp.py</StartupFile>
+    <StartupFile>orpheus_tts.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,8 +22,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="OrpheusTTS.py" />
-    <Compile Include="orpheus_inference_cpp.py" />
+    <Compile Include="orpheus_tts.py" />
+    <Compile Include="orpheus_impl.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="MSBuild|venv|C:\_myDrive\repos\auto-vlog\AutoVlogProj\AutoVlogProj.pyproj" />
