@@ -17,6 +17,8 @@ from huggingface_hub import hf_hub_download
 from numpy.typing import NDArray
 from typing_extensions import NotRequired, TypedDict
 
+DEFAULT_SAMPLE_RATE = 24000
+
 # Constants
 # Voice definitions per language (Expand as needed based on models)
 LANG_VOICES = {

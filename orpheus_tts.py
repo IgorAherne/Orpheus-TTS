@@ -9,13 +9,11 @@ import traceback
 
 # Local Implementation Import
 try:
-    from orpheus_impl import OrpheusCpp, TTSOptions, LANG_TO_MODEL_REPO
+    from orpheus_impl import OrpheusCpp, TTSOptions, LANG_TO_MODEL_REPO, LANG_VOICES, DEFAULT_SAMPLE_RATE
 except ImportError as e:
     print(f"FATAL: Failed to import OrpheusCpp from orpheus_impl.py: {e}")
     sys.exit(1)
 
-
-DEFAULT_SAMPLE_RATE = 24000
 
 # Helper Functions (keep check_onnxruntime_gpu and check_cuda_path)
 def check_onnxruntime_gpu():
@@ -226,8 +224,21 @@ def setup_arg_parser():
 
 # Script Entry Point
 if __name__ == '__main__':
-    arg_parser = setup_arg_parser()
-    cli_args = arg_parser.parse_args()
+    try:
+        default_test_args = [
+            "This is my default test sentence for debugging.",# Required 'text' argument
+            "--output", "test_output_2.wav",                  # Example output
+            "--lang", "en",                                   # Example language
+            "--voice", "tara",                                # Example voice
+            "--verbose",                                      # Enable verbose logging for testing
+            # Add any other arguments you want to test with:
+            # "--model-path", "/path/to/your/test/model.gguf",
+            # "--gpu-layers", "10",
+        ]
+        arg_parser = setup_arg_parser()
+        cli_args = arg_parser.parse_args(args=default_test_args)
+    except Exception as ex:
+        print(f"{ex}")
 
     # Set default voice if not provided
     if cli_args.voice is None:
